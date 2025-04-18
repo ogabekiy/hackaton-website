@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { SharedModule } from './common/shared.module';
+import { AuthsModule } from './auths/auths.module';
 
 @Module({
   imports: [UsersModule,
@@ -16,7 +17,8 @@ import { SharedModule } from './common/shared.module';
       password: process.env.DB_PASSWORD,
       autoLoadModels: true, 
       synchronize: true,
-    })
+    }),
+    AuthsModule
   ],
   controllers: [],
   providers: [],
