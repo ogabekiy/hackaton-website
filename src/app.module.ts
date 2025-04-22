@@ -3,10 +3,10 @@ import { UsersModule } from './users/users.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { SharedModule } from './common/shared.module';
 import { AuthsModule } from './auths/auths.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [UsersModule,
-
     SharedModule,
     SequelizeModule.forRoot({
       dialect: 'postgres',
@@ -18,7 +18,8 @@ import { AuthsModule } from './auths/auths.module';
       autoLoadModels: true, 
       synchronize: true,
     }),
-    AuthsModule
+    AuthsModule,
+    EventsModule,
   ],
   controllers: [],
   providers: [],
