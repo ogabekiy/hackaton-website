@@ -4,6 +4,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { SharedModule } from './common/shared.module';
 import { AuthsModule } from './auths/auths.module';
 import { EventsModule } from './events/events.module';
+import { MediasModule } from './medias/medias.module';
 
 @Module({
   imports: [UsersModule,
@@ -20,6 +21,7 @@ import { EventsModule } from './events/events.module';
     }),
     AuthsModule,
     EventsModule,
+    MediasModule,
   ],
   controllers: [],
   providers: [],

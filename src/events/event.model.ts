@@ -1,4 +1,5 @@
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
+import { Media } from "src/medias/media.model";
 
 @Table({tableName: 'events'})
 export class Event extends Model<Event>{
@@ -38,4 +39,7 @@ export class Event extends Model<Event>{
         allowNull: false
     })
     timer_end : Date
+
+    @HasMany(() => Media)
+    medias: Media[]
 }
